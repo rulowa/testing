@@ -1,6 +1,8 @@
 ﻿using ExileCore;
 using ExileCore.PoEMemory.MemoryObjects;
 using ExileCore.Shared.Helpers;
+using System;
+using System.Linq;
 using SharpDX;
 
 
