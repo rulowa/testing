@@ -75,7 +75,7 @@ namespace DelveWalls
 
             }
         }
-
+        private Camera Camera => GameController.Game.IngameState.Camera;
         public bool DrawArrow(Entity e)
         {
             //    If chest is closed, show arrow. If chest is open, don't show arrow.
@@ -87,7 +87,6 @@ namespace DelveWalls
             if (distance > Settings.Dist) return false;
             var dir = MathHepler.GetDirectionsUV(phi, distance);
             //LogMessage($"Wall close Distance {distance}  Direction {Dir}", 1);
-            private Camera Camera => GameController.Game.IngameState.Camera;
             var center = new Vector2(Settings.PosX, Settings.PosY); // Resolution halfed. 960 x 2 = 1920 (1080p)
 
             var worldtoscreen = Camera.WorldToScreen(e.Pos);
