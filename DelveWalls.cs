@@ -18,7 +18,6 @@ namespace DelveWalls
     {
 
         private IngameUIElements _inGameUi;
-        private Camera Camera => GameController.Game.IngameState.Camera;
 
         public override void OnLoad()
         {
@@ -88,7 +87,7 @@ namespace DelveWalls
             if (distance > Settings.Dist) return false;
             var dir = MathHepler.GetDirectionsUV(phi, distance);
             //LogMessage($"Wall close Distance {distance}  Direction {Dir}", 1);
-           
+            private Camera Camera => GameController.Game.IngameState.Camera;
             var center = new Vector2(Settings.PosX, Settings.PosY); // Resolution halfed. 960 x 2 = 1920 (1080p)
 
             var worldtoscreen = Camera.WorldToScreen(e.Pos);
@@ -126,7 +125,7 @@ namespace DelveWalls
             if (e.Path.Contains("DelveWall"))
             {
                 Graphics.DrawImage("directions.png", rectDirection, dir, Settings.WallColor);
-                Graphics.DrawText("WALL", worldtoscreen, Settings.TextColor.Value, 22, FontAlign.Center);
+                Graphics.DrawText("WALL", worldtoscreen.ToVector2Num(), Settings.TextColor.Value, 22, FontAlign.Center);
             }
 
             if (e.Path.Contains("DelveMiningSuppliesFlares")
