@@ -90,6 +90,7 @@ namespace DelveWalls
             var center = new Vector2(Settings.PosX, Settings.PosY); // Resolution halfed. 960 x 2 = 1920 (1080p)
 
             var worldtoscreen = Camera.WorldToScreen(e.Pos);
+            if (worldtoscreen == new Vector2()) continue;
 
             var rectDirection = new RectangleF(center.X -20, center.Y -40, Settings.ArrowSize, Settings.ArrowSize); // Last 40,40 refers to size of arrow icon
 
