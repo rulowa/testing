@@ -11,6 +11,7 @@ namespace DelveWalls
     {
 
         private IngameUIElements _inGameUi;
+        private Camera Camera => GameController.Game.IngameState.Camera;
 
         public override void OnLoad()
         {
@@ -74,7 +75,6 @@ namespace DelveWalls
             //    If chest is closed, show arrow. If chest is open, don't show arrow.
                 if (!e.IsTargetable)
                 return false;
-
 
             var delta = e.GridPos - GameController.Player.GridPos;
             var distance = delta.GetPolarCoordinates(out var phi);
