@@ -4,6 +4,7 @@ using ExileCore.Shared.Enums;
 using ExileCore.Shared.Helpers;
 using SharpDX;
 using System;
+using System.Numerics;
 using System.Linq;
 using ExileCore.PoEMemory.MemoryObjects;
 using ExileCore.PoEMemory.Components;
