@@ -76,6 +76,9 @@ namespace DelveWalls
             }
         }
         private Camera Camera => GameController.Game.IngameState.Camera;
+        private Vector2 ScreenCenter =>
+            new Vector2(MapRectangle.Width / 2, MapRectangle.Height / 2 - 20) + new Vector2(MapRectangle.X, MapRectangle.Y) +
+            new Vector2(MapWindow.LargeMapShiftX, MapWindow.LargeMapShiftY);
         public bool DrawArrow(Entity e)
         {
             //    If chest is closed, show arrow. If chest is open, don't show arrow.
