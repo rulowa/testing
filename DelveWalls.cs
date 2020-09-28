@@ -126,6 +126,9 @@ namespace DelveWalls
             if (e.Path.Contains("DelveWall"))
             {
                 Graphics.DrawImage("directions.png", rectDirection, dir, Settings.WallColor);
+                System.Numerics.Vector2 backgroundBox;
+                backgroundBox.X = textBox.X + 2;
+                backgroundBox.Y = textBox.Y * 2f;
                 Graphics.DrawText("WALL", worldtoscreen.ToVector2Num(), Settings.TextColor.Value, 22, FontAlign.Center);
             }
 
